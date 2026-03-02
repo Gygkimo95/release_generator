@@ -1,0 +1,260 @@
+{
+  "doc_type": "scale_release",
+  "last_updated": "2026-03-02",
+  "experience_version": 2,
+  "source": "cold_start_from_historical_docs",
+  "notes": "从 v2025.11、v2025.12、v_sqlflash_202512 三份历史文档中提炼的初始经验",
+  "rules": [
+    {
+      "id": "r001",
+      "category": "structure",
+      "rule": "月末发版文档的标题格式为两层：第一行是版本标识（如'SCALE文档12月版本'），第二行是正式标题（如'SCALE 测评框架 2025年12月版本说明：{副标题}'）",
+      "source_version": "v2025.11, v2025.12",
+      "confidence": "high",
+      "times_applied": 2
+    },
+    {
+      "id": "r002",
+      "category": "structure",
+      "rule": "专项测评报告的标题格式：'SCALE 专项测评报告：{模型名} 在 {能力维度} 上的表现评估'",
+      "source_version": "v_sqlflash_202512",
+      "confidence": "high",
+      "times_applied": 1
+    },
+    {
+      "id": "r003",
+      "category": "content",
+      "rule": "关键挑战不单独成章，应作为子部分嵌入到每个核心维度的分析中，与'优势'并列形成对比结构",
+      "source_version": "v2025.11",
+      "confidence": "high",
+      "times_applied": 3
+    },
+    {
+      "id": "r004",
+      "category": "content",
+      "rule": "模型核心结论速览用一句话概括模型特征，使用引号短语如'深度理解、高质优化、均衡转换'的形式",
+      "source_version": "v2025.11",
+      "confidence": "high",
+      "times_applied": 2
+    },
+    {
+      "id": "r005",
+      "category": "formatting",
+      "rule": "数据引用时带分数和排名信息，格式如 '86.0分' 或 '榜单首位（86.0分）'，不要只说'高分'",
+      "source_version": "v2025.11, v2025.12",
+      "confidence": "high",
+      "times_applied": 3
+    },
+    {
+      "id": "r006",
+      "category": "naming",
+      "rule": "报告中所有维度和子维度名称必须与原始数据源（截图/平台）中的名称一字不差地保持一致，严禁 AI 自行改写或意译",
+      "source_version": "v2025.11",
+      "confidence": "high",
+      "times_applied": 3
+    },
+    {
+      "id": "r007",
+      "category": "content",
+      "rule": "文档结尾必须有行动号召段落，包含'立即体验'或'欢迎登录 SCALE 官方平台'等引导语",
+      "source_version": "v2025.11, v2025.12, v_sqlflash_202512",
+      "confidence": "high",
+      "times_applied": 3
+    },
+    {
+      "id": "r008",
+      "category": "content",
+      "rule": "[已废弃] 原规则'点击图片可查看完整电子表格'已被移除，静态文档中不应包含此类交互引导文案",
+      "source_version": "v2025.11, v2025.12, v_sqlflash_202512",
+      "confidence": "deprecated",
+      "times_applied": 4
+    },
+    {
+      "id": "r009",
+      "category": "content",
+      "rule": "12月版本开始引入了按厂商分组的模型分析方式（OpenAI/Anthropic/国产厂商），每个厂商下列举各模型，每个模型有'能力核心'和'业务价值'两个固定字段",
+      "source_version": "v2025.12",
+      "confidence": "medium",
+      "times_applied": 1
+    },
+    {
+      "id": "r010",
+      "category": "content",
+      "rule": "应用建议部分按场景分类推荐模型，格式为'场景描述：首选/推荐 {模型名}，原因说明'",
+      "source_version": "v2025.12",
+      "confidence": "high",
+      "times_applied": 2
+    },
+    {
+      "id": "r011",
+      "category": "style",
+      "rule": "挑战描述的技术细节要具体到数据库层面，如具体的函数名、语法、版本号，不能泛泛而谈",
+      "source_version": "v2025.11",
+      "confidence": "high",
+      "times_applied": 2
+    },
+    {
+      "id": "r012",
+      "category": "style",
+      "rule": "专项测评报告中每个指标分析段落采用'得分数据 + 分析：'的固定格式，分析段落以专业第三方视角撰写",
+      "source_version": "v_sqlflash_202512",
+      "confidence": "high",
+      "times_applied": 1
+    },
+    {
+      "id": "r013",
+      "category": "structure",
+      "rule": "当月有数据集升级时，数据集升级内容应单独成章（第二章），在模型测评之前呈现",
+      "source_version": "v2025.12",
+      "confidence": "high",
+      "times_applied": 1
+    },
+    {
+      "id": "r014",
+      "category": "structure",
+      "rule": "模型变更日志分为'新增评测模型'和'存量模型升级与快照更新'两部分",
+      "source_version": "v2025.12",
+      "confidence": "high",
+      "times_applied": 1
+    },
+    {
+      "id": "r015",
+      "category": "structure",
+      "rule": "专项测评报告必须包含独立的'评测方法论'章节，阐明 SCALE 三大核心维度、各子维度名称及评估标准，为全文提供分析框架",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r016",
+      "category": "content",
+      "rule": "必须引用和整合所有用户提供的截图/图表，确保图文对应，不可遗漏",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r017",
+      "category": "formatting",
+      "rule": "大量同构子维度数据（如排名、评分）应使用汇总表格呈现，仅保留主维度级别的图表作为视觉概览",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r018",
+      "category": "structure",
+      "rule": "评测摘要与核心结论合并为单一章节，置于报告前部，高度概括核心发现",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r019",
+      "category": "structure",
+      "rule": "每个核心维度分析必须明确划分'优势'和'挑战/待提升'两个子部分，结构清晰、观点平衡",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r020",
+      "category": "formatting",
+      "rule": "图片必须紧邻其所描述的维度内容，放在对应维度的表格前方，确保上下文连贯",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r021",
+      "category": "formatting",
+      "rule": "报告必须有正式完整的标题，文末需标明数据截止时间或评测周期",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r022",
+      "category": "style",
+      "rule": "根据报告受众调整措辞：面向合作方时用'待提升'替代'挑战/短板'，适当强调优势和改进潜力，弱化负面表述",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r023",
+      "category": "content",
+      "rule": "子指标排名必须从实际排名截图中逐一提取，不可根据分数高低推断排名",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r024",
+      "category": "naming",
+      "rule": "所有维度和子维度名称必须与 SCALE 平台截图中的原始名称完全一致，逐字匹配，严禁改写或意译。Gemini OCR 识别不稳定时需向用户确认",
+      "source_version": "v2026.02_minimaxM2.5",
+      "confidence": "high",
+      "times_applied": 0
+    }
+  ],
+  "anti_patterns": [
+    {
+      "id": "ap001",
+      "description": "AI 容易在'关键挑战'部分写出泛泛的描述而不是具体的技术案例",
+      "solution": "要求每个挑战必须包含具体的 SQL 操作、函数名、数据库版本等细节"
+    },
+    {
+      "id": "ap002",
+      "description": "AI 容易混淆不同数据库的特性，在转换分析中张冠李戴",
+      "solution": "在 prompt 中明确要求检查目标数据库的版本和语法支持情况"
+    },
+    {
+      "id": "ap003",
+      "description": "AI 生成的摘要容易过长，失去'速览'的效果",
+      "solution": "核心看点速览控制在 2-3 个 bullet point，每个不超过 2 行"
+    },
+    {
+      "id": "ap004",
+      "description": "AI 编造未在原始材料中出现的数据、指标或技术细节（如虚构具体的 SQL 失败案例、编造分数排名）",
+      "solution": "所有数据必须来源于用户提供的截图或输入材料，无法确认时留空并提示用户补充"
+    },
+    {
+      "id": "ap005",
+      "description": "AI 根据分数高低推断排名（分数最高=第1名），而非从排名表截图中读取实际排名",
+      "solution": "排名必须从独立的排名截图中逐一提取，不可进行逻辑推断"
+    },
+    {
+      "id": "ap006",
+      "description": "AI 自行改写截图中的专有指标名称（如将'执行准确性'改为'执行方案确定'），且 Gemini OCR 多次识别结果不一致",
+      "solution": "指标名称需与截图严格比对，不确定时提供多个候选让用户确认"
+    }
+  ],
+  "prompt_patches": [
+    {
+      "id": "pp001",
+      "content": "关键挑战部分，每个挑战必须包含：具体的 SQL 操作或函数名、涉及的数据库版本、错误的具体表现、正确行为的说明",
+      "added_at": "cold_start"
+    },
+    {
+      "id": "pp002",
+      "content": "模型核心结论速览用一个概括性短语（如'深度理解、高质优化、均衡转换'），然后用1-2句话展开说明",
+      "added_at": "cold_start"
+    },
+    {
+      "id": "pp003",
+      "content": "所有分数引用必须带具体数值，如'86.0分'，不能用'高分'、'优秀'等模糊表述",
+      "added_at": "cold_start"
+    },
+    {
+      "id": "pp004",
+      "content": "处理包含指标名称的截图时，必须逐字照抄原始文字，禁止任何形式的改写或意译。若 OCR 不确定，需向用户确认",
+      "added_at": "v2026.02_minimaxM2.5"
+    },
+    {
+      "id": "pp005",
+      "content": "排名数据必须从专门的排名表截图中提取，不可根据分数从高到低推断。每个子指标需要对应一张独立的排名截图",
+      "added_at": "v2026.02_minimaxM2.5"
+    }
+  ]
+}

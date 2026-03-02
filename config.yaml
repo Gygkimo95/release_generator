@@ -1,0 +1,26 @@
+# SCALE_file 文档生成系统配置
+# 请填写你的 API key 和相关配置
+
+# Gemini API 配置
+gemini:
+  api_key: "AIzaSyCON1aqWPsEXrpddoD1ZlKTGALoovXFja0"           # 填写你的 Gemini API Key
+  model: "gemini-2.5-pro"  # 使用的模型版本
+  # 可选模型: gemini-2.5-pro, gemini-2.5-flash, gemini-2.0-pro 等
+
+# 文档生成配置
+generation:
+  # 生成时携带的最大经验条数（避免过多经验干扰 LLM）
+  max_experience_rules: 20
+  # 生成初版后是否自动打开文件（在 Cursor 中）
+  auto_open: true
+
+# 经验系统配置
+experience:
+  # 经验自动提炼（定稿后自动 diff + 分析）
+  auto_extract: true
+  # 经验裁剪阈值：超过此数量触发自动整理
+  optimize_threshold: 50
+  # 低置信度经验的自动清理天数
+  low_confidence_ttl_days: 90
+
+
