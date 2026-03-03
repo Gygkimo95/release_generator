@@ -1,1 +1,1 @@
-versions/v2026.02_minimaxM2.5/final.md
+versions/v2026.02_feature/final.md

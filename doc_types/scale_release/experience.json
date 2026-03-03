@@ -1,7 +1,7 @@
 {
   "doc_type": "scale_release",
-  "last_updated": "2026-03-02",
-  "experience_version": 2,
+  "last_updated": "2026-03-03",
+  "experience_version": 3,
   "source": "cold_start_from_historical_docs",
   "notes": "从 v2025.11、v2025.12、v_sqlflash_202512 三份历史文档中提炼的初始经验",
   "rules": [
@@ -196,6 +196,46 @@
       "source_version": "v2026.02_minimaxM2.5",
       "confidence": "high",
       "times_applied": 0
+    },
+    {
+      "id": "r025",
+      "category": "style",
+      "rule": "功能发版文档应从用户视角撰写（谁在用、什么场景、解决什么问题、获得什么价值），而非平台视角（我们提供了什么功能）。章节结构推荐：适用场景→获得的价值→操作流程",
+      "source_version": "v2026.02_feature",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r026",
+      "category": "style",
+      "rule": "发版文档中避免过多使用第二人称'您'，应使用省略主语、'用户'、直接用动词开头等中性表达，保持专业文档调性",
+      "source_version": "v2026.02_feature",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r027",
+      "category": "content",
+      "rule": "描述用户可选择/可配置的功能时，必须明确强调'按需选择'而非暗示'全部使用'，用具体场景举例说明不同选择策略（如'只关注优化能力则只勾选SQL优化'）",
+      "source_version": "v2026.02_feature",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r028",
+      "category": "structure",
+      "rule": "功能发版文档的摘要应从用户痛点/需求切入（可用引用格式呈现典型用户声音），再引出功能如何回应这些需求，而非直接宣布功能上线",
+      "source_version": "v2026.02_feature",
+      "confidence": "high",
+      "times_applied": 0
+    },
+    {
+      "id": "r029",
+      "category": "formatting",
+      "rule": "功能对比表应以用户场景为行维度（如'验证自有模型能力'），列维度为'推荐模式→需要准备→将获得'，而非以平台功能属性为维度",
+      "source_version": "v2026.02_feature",
+      "confidence": "high",
+      "times_applied": 0
     }
   ],
   "anti_patterns": [
@@ -228,6 +268,16 @@
       "id": "ap006",
       "description": "AI 自行改写截图中的专有指标名称（如将'执行准确性'改为'执行方案确定'），且 Gemini OCR 多次识别结果不一致",
       "solution": "指标名称需与截图严格比对，不确定时提供多个候选让用户确认"
+    },
+    {
+      "id": "ap007",
+      "description": "AI 撰写功能介绍时容易站在平台视角罗列功能点（'我们提供了X、Y、Z'），缺乏用户代入感",
+      "solution": "以用户场景和痛点为出发点组织内容，先说'谁会用、什么场景'，再说'能获得什么价值'，最后才是操作流程"
+    },
+    {
+      "id": "ap008",
+      "description": "AI 描述可选功能时容易暗示用户应当全部使用（如'全面评估所有维度'、'覆盖全部26个模型'），忽略了按需选择的灵活性",
+      "solution": "明确写出'按需选择'，并用具体场景举例不同的选择策略"
     }
   ],
   "prompt_patches": [
@@ -255,6 +305,16 @@
       "id": "pp005",
       "content": "排名数据必须从专门的排名表截图中提取，不可根据分数从高到低推断。每个子指标需要对应一张独立的排名截图",
       "added_at": "v2026.02_minimaxM2.5"
+    },
+    {
+      "id": "pp006",
+      "content": "功能发版文档必须从用户场景和痛点出发组织内容，避免平台视角的功能罗列。对于可选配置项，必须用具体场景举例说明按需选择的策略",
+      "added_at": "v2026.02_feature"
+    },
+    {
+      "id": "pp007",
+      "content": "发版文档中控制第二人称'您'的使用频率，优先使用省略主语或'用户'等中性表达",
+      "added_at": "v2026.02_feature"
     }
   ]
 }
